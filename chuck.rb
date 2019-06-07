@@ -14,19 +14,22 @@ class ChuckJokes
   end
 
   def get_joke_by_id(id)
-    puts bug_joke = ChuckNorris::JokeFinder.find_joke()
-    p bug_joke.bug_joke
-
+    bug_joke = ChuckNorris::JokeFinder.find_joke(id)
+    puts bug_joke.joke
+    puts "The ID of this joke is #{bug_joke.id}"
   end
 
-  def replace_name(name)
-    joke = ChuckNorris::JokeFinder.get_joke(first_name: "#{name[0]}", last_name: "#{name[1]}" )
-    p joke.joke
+  def replace_name(name, sname)
+    joke = ChuckNorris::JokeFinder.get_joke(first_name: name, last_name: sname )
+    puts joke.joke
+    puts "The ID of this joke is #{joke.id}"
+
   end
 
   def random
-    puts joke = ChuckNorris::JokeFinder.get_joke
-    p joke.joke
+    joke = ChuckNorris::JokeFinder.get_joke
+    puts joke.joke
+    puts "The ID of this joke is #{joke.id}"
   end
 
 end
